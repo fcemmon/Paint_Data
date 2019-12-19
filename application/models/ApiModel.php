@@ -54,7 +54,7 @@ class ApiModel extends CI_Model
         $connectionInfo = array( "Database"=>$request['databaseName'], "UID"=>$request['username'], "PWD"=>$request['password']);
         $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-        $sql = "SELECT * from PaintFirmJobs_TEST where RackStyle = '".$request['rackId']."' and JobNum = '".$request['job']."' and PaintMethod = '".$request['paintNumber']."'";
+        $sql = "SELECT * from PaintFirmJobs where RackStyle = '".$request['rackId']."' and JobNum = '".$request['job']."' and PaintMethod = '".$request['paintNumber']."'";
 
         $stmt = sqlsrv_query($conn, $sql);
 
