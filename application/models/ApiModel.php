@@ -65,6 +65,8 @@ class ApiModel extends CI_Model
             return;
         }
 
+        $result = [];
+        
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             $documents['Company']  = $row['Company'];
             $documents['JobNum']  = $row['JobNum'];
