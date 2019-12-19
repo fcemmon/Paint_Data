@@ -27,7 +27,7 @@ class ApiModel extends CI_Model
         }*/
 
         $serverName = "172.0.3.210\\sqlexpress, 1433"; //serverName\instanceName, portNumber (default is 1433)
-		$connectionInfo = array( "Database"=>"Paint_Data", "UID"=>"romandb", "PWD"=>"RomanDB11!");
+		$connectionInfo = array( "Database"=>$request['databaseName'], "UID"=>$request['username'], "PWD"=>$request['password']);
 		$conn = sqlsrv_connect( $serverName, $connectionInfo);
 		
 		if( $conn ) {
@@ -51,7 +51,7 @@ class ApiModel extends CI_Model
         // $mysqli = new mysqli($request['hostname'], $request['username'], $request['password'], $request['databaseName']);
 
         $serverName = "172.0.3.210\\sqlexpress, 1433"; //serverName\instanceName, portNumber (default is 1433)
-        $connectionInfo = array( "Database"=>"Paint_Data", "UID"=>"romandb", "PWD"=>"RomanDB11!");
+        $connectionInfo = array( "Database"=>$request['databaseName'], "UID"=>$request['username'], "PWD"=>$request['password']);
         $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
         $sql = "SELECT * from PaintFirmJobs_TEST where RackStyle = '".$request['rackId']."' and JobNum = '".$request['job']."' and PaintMethod = '".$request['paintNumber']."'";
@@ -111,7 +111,7 @@ class ApiModel extends CI_Model
         //         generateServerResponse(F, FAIL);
         //     }
             
-        }
+        //}
     }
 }
 ?>
