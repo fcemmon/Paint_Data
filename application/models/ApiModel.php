@@ -31,10 +31,9 @@ class ApiModel extends CI_Model
 		$conn = sqlsrv_connect( $serverName, $connectionInfo);
 		
 		if( $conn ) {
-		     echo "Connection established.<br />";
+		     generateServerResponse(S, SUCCESS);
 		}else{
-		     echo "Connection could not be established.<br />";
-		     die( print_r( sqlsrv_errors(), true));
+		     generateServerResponse(F, FAIL);
 		}
 
         sqlsrv_close($conn);
