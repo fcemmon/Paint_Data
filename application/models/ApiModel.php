@@ -62,7 +62,7 @@ class ApiModel extends CI_Model
         if ($stmt) {
             echo "Connect Database";
         } else {
-            echo "Connection is failed";
+            echo sqlsrv_errors();
         }
         // // Check connection
         // if ($mysqli -> connect_errno) {
