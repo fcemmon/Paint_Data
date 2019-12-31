@@ -13,7 +13,7 @@ class GetRequest extends CI_Controller{
     
     # GET Data from Table
     public function SearchData(){
-      $checkRequestKeys = array('hostname','password','databaseName','username','paintNumber');
+      $checkRequestKeys = array('hostname','password','databaseName','username','job','paintNumber');
       $this->request->getUrlRequest($checkRequestKeys,'SearchData');
     }
 }
